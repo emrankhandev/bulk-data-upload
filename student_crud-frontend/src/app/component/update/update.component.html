@@ -1,0 +1,48 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <form [formGroup]="updateStudentForm" (submit)="updateStudent()">
+                <div class="col-md-6 offset-md-3">
+                    <h2 style="text-align: center; margin-top: 20px;">Student Details</h2>
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" formControlName="name" [(ngModel)]="student.name" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <textarea class="form-control" formControlName="address" [(ngModel)]="student.address" rows="3"></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" formControlName="gender" [(ngModel)]="student.gender" type="radio" value="Male">
+                        <label class="form-check-label">
+                          Male
+                        </label>
+                      </div>
+                    <div class="form-check">
+                        <input class="form-check-input" formControlName="gender" [(ngModel)]="student.gender" type="radio" value="Female">
+                        <label class="form-check-label">
+                            Female
+                        </label>
+                    </div> <br>
+                    <select class="form-select" formControlName="bloodGroup" [(ngModel)]="student.bloodGroup">
+                        <option selected>Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="B+">B+</option>
+                        <option value="AB+">AB+</option>
+                      </select>
+                      <br>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" formControlName="education" type="checkbox" [(ngModel)]="student.education" value="MSc">
+                        <label class="form-check-label">MSc</label>
+                      </div>
+                      <br><br><br>
+                      <div class="container text-center">
+                        <button type="submit" class="btn btn-primary" >Save</button>
+                        <button type="reset" class="btn btn-warning" style="margin-left: 10px;">Reset</button>
+                      </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
